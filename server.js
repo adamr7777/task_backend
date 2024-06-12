@@ -1,14 +1,15 @@
-
 const express = require('express');
 const cors = require('cors');
+
 const server = express();
 const port = 5000;
 
 server.use(cors());
+server.use(express.json());
 
-server.get('/test', (req, res)=> {
-    console.log('Click Me!!')
-    res.status('200');
+server.post('/test', (req, res)=> {
+    console.log(req.body.text);
+    res.status(200);        /*chain the status and send */
     res.send({
         "message": "the server responded!!!"
     });
