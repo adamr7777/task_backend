@@ -1,28 +1,31 @@
 
+
+
 const arrangePermutations = (wordsString)=> {
-    
-    const wordsArray = wordsString.split('\n')
-    .filter((item)=> item !== '');
+    const wordsArray = wordsString.split('\n').filter((item)=> item !== '');
 
-    const arrangedPermutationsArray = wordsArray.map((word)=> {
-        const permutationsArray = wordsArray.map((potentialPermutation, index)=> {
-            const wordChars = word.split('').sort().join();
-            const potentialPermutationChars = potentialPermutation.split('').sort().join();
+    const permutationsMap = new Map();
+
+    wordsArray.forEach((word)=> {
+        const wordCharsSorted = word.split('').sort().join('');
         
-            if(wordChars !== potentialPermutationChars) return;
+        if (permutationsMap.has(wordCharsSorted)) {
+            permutationsMap.get(wordCharsSorted).push(word);
+        } else {
+            permutationsMap.set(wordCharsSorted, [word]);
+        }
+    });
 
-            wordsArray.splice(index, 1);
-            
-            return potentialPermutation;
-        });
-        if(permutationsArray.length < 1) return /*revise */
+    const arrangedPermutationsArray = [];
 
-
-        return word + ' ' + permutationsArray.join(' ');
+    permutationsMap.forEach((permutations) => {
+        arrangedPermutationsArray.push(permutations.join(' '));
     });
 
     return arrangedPermutationsArray.join('\n');
 };
+
+
 
 
 module.exports = arrangePermutations;

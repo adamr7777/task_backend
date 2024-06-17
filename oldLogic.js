@@ -1,45 +1,49 @@
-function getPermutations(input) {
-    let permutations = [''];
+// const arrangePermutations = (wordsString)=> {
     
-    // Iterate over each character in the input string
-    for (let char of input) {
-        let newPermutations = [];
-        // Iterate over existing permutations and insert current character at every position
-        for (let permutation of permutations) {
-            for (let i = 0; i <= permutation.length; i++) {
-                let newPermutation = permutation.slice(0, i) + char + permutation.slice(i);
-                newPermutations.push(newPermutation);
-            }
-        }
-        permutations = newPermutations;
-    }
+//     const wordsArray = wordsString.split('\n')
+//     .filter((item)=> item !== '');
+
+//     const arrangedPermutationsArray = wordsArray.map((word, wIndex)=> {
+//         const permutationsArray = wordsArray.map((potentialPermutation, permIndex)=> {
+//             const wordChars = word.split('').sort().join();
+//             const potentialPermutationChars = potentialPermutation.split('').sort().join();
+            
+//             if(wIndex === permIndex) return;
+//             if(wordChars !== potentialPermutationChars) return;
+
+//             wordsArray.splice(permIndex, 1);
+            
+//             return potentialPermutation;
+//         });
+//         if(permutationsArray.length < 1) return 
+
+
+//         return word + ' ' + permutationsArray.join(' ');
+//     });
+
+//     return arrangedPermutationsArray.join('\n');
+// };
+
+
+
+
+
+// const arrangePermutations = (wordsString)=> {
     
-    return permutations;
-};
+//     const wordsArray = wordsString.split('\n')
+//     .filter((item)=> item !== '');
+
+//     const arrangedPermutationsArray = [];
+    
+//     wordsArray.forEach((word, wIndex)=> {
+//         wordsArray.forEach((potentialPermutation, permIndex)=>{
+//             
+
+//         });
+        
+//       
+//     });
 
 
-let outputString = '';
-
-const wordsArray = req.body.text.split('\n')
-    .filter((item)=> item !== '');
-
-    wordsArray.forEach((word=> {
-
-        let stringWithPermutaions = '';
-
-        const permutationsArray = getPermutations(word);
-
-        const wordPermutationArray = permutationsArray.filter((permutation)=> permutation === word);
-        console.log(wordPermutationArray);
-
-
-        wordPermutationArray.forEach((wordPermutation)=> {
-            stringWithPermutaions = stringWithPermutaions + word + ' ' + wordPermutation;
-        });
-
-        outputString = outputString + ' ' + stringWithPermutaions; 
-    }));
-
-    // console.log(outputString);
-
-// console.log(getPermutations(wordsArray[0]));
+   
+// };
