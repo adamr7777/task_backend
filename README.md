@@ -1,12 +1,18 @@
 # Anagram Arranger
 
-Anagram Arranger is an application that processes a list of words from a .txt file, arranging anagrams on the same line in the output.
+Anagram Arranger is an application that processes a list of words from a .txt file, arranging anagrams on the same lines in the output.
 
 
 ## File Structure
 
 - **Frontend:** Collects the .txt file and sends it to the backend.
 - **Backend:** Receives the .txt file, processes it, and sends back the rearranged list.
+
+## How to Use
+
+1. Click the **Select File** button and choose a .txt file containing a list of words.
+2. Click the **Get it!** button to generate a new list where anagrams are grouped together on the same lines.
+3. Click the **Clear the Screen** button to clear the screen.
 
 ## Main Logic
 
