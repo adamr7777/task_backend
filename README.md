@@ -22,7 +22,7 @@ The main logic for rearranging the list of words is located in the backend main 
 
 You can view the code [here](https://github.com/adamr7777/task_backend/blob/main/utils/arrangePermutations.js).
 
-## Link to Anagram Aranger
+## Link to Anagram Arranger
 
 https://anagrams-sorted.netlify.app/
 
