@@ -7,7 +7,7 @@ const arrangePermutations = (wordsString)=> {
     const permutationsMap = new Map();
 
     wordsArray.forEach((word)=> {
-        const wordCharsSorted = word.split('').sort().join('');
+        const wordCharsSorted = word.split('').sort().join('').trim();
         
         if (permutationsMap.has(wordCharsSorted)) {
             permutationsMap.get(wordCharsSorted).push(word);
@@ -15,6 +15,7 @@ const arrangePermutations = (wordsString)=> {
             permutationsMap.set(wordCharsSorted, [word]);
         }
     });
+
 
     const arrangedPermutationsArray = [];
 
